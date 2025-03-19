@@ -81,7 +81,8 @@ export default function Hero() {
                 ${wrongClick && "opacity-0 cursor-not-allowed pointer-events-none"}
                 `}>
                 <div className="w-full h-full py-[0.1em] rounded-[0.4em]" style={second}>
-                    <div style={third} className={`px-3 py-1 rounded-[0.4em] font-semibold ${ibmPlexMono.className}`}>
+                    <div style={third} className={`md:px-3 md:py-1 px-2 py-1 rounded-[0.4em] font-semibold md:text-[1rem] text-sm
+                         ${ibmPlexMono.className}`}>
                         {languages.name}
                     </div>
                 </div>
@@ -105,7 +106,7 @@ export default function Hero() {
                 key={index}
                 disabled={isCorrect || isWrong || theClickLimit}
                 className={`shadow-md flex justify-center items-center cursor-pointer 
-                align-middle w-[3rem] h-[3rem] rounded-md font-bold text-lg border border-[#ced4da] bg-[#fffafb]
+                align-middle md:w-[3rem] md:h-[3rem] w-[2.1rem] h-[2.1rem]  rounded-md font-bold text-lg border border-[#ced4da] bg-[#fffafb]
                 ${isCorrect && 'bg-green-500 border-green-500 text-white transition-colors duration-200 ease-in-out'}
                 ${isWrong && 'bg-red-400 border-red-400 text-[#f7f7f7] transition-colors duration-200 ease-in-out'}
                 ${theClickLimit && (gameWon ? 'border-green-500 cursor-not-allowed pointer-events-none' :
@@ -127,11 +128,15 @@ export default function Hero() {
                 <div className="w-full h-[10vh]">
 
                 </div>
-                <div className="w-full h-[20vh] flex justify-center align-middle items-center flex-col p-2">
-                    <div className="w-full h-[50%] flex justify-center items-center">
-                        <p className="text-center font-bold m-2 text-lg lg:max-w-[40vw] md:max-w-[80vw]
+                <div className="w-full md:h-[20vh] h-[15vh] flex justify-center align-middle items-center flex-col md:p-2 p-1">
+                    <div className="w-full md:h-[50%] h-auto flex justify-center items-center">
+                        <p className="text-center font-bold m-2 text-lg lg:max-w-[40vw] md:max-w-[80vw] hidden md:block
                         bg-gradient-to-r from-[#1a2766] via-[#ae1b1e] to-[#fc9f32] text-transparent bg-clip-text">
                             Guess the word within 8 attempts to keep the programming world safe from dissapearance.
+                        </p>
+                        <p className="text-center font-bold m-2 text-sm  md:hidden
+                        bg-gradient-to-r from-[#1a2766] via-[#ae1b1e] to-[#fc9f32] text-transparent bg-clip-text">
+                            Guess in 8 tries to save programming.
                         </p>
                     </div>
                     <div className={`w-auto px-10 h-[50%] flex justify-center items-center
@@ -139,11 +144,11 @@ export default function Hero() {
                         ${gameWon && 'bg-[#04be23] border-[#04be23]'}
                         ${gameLost && 'bg-[#d00000] border-[#d00000]'}`}>
                         <div className="lg:max-w-[40vw] md:max-w-[80vw] h-auto ">
-                            {gameWon && <h1 className={`text-[#f7f7f7] text-center font-bold m-0 text-3xl ${ibmPlexMono.className} leading-relaxed`}>
+                            {gameWon && <h1 className={`text-[#f7f7f7] text-center font-bold m-0 md:text-3xl text-xl ${ibmPlexMono.className} leading-relaxed`}>
                                 YOU WON THE GAME</h1>}
-                            {gameLost && <h1 className={`text-[#f7f7f7] text-center font-bold m-0 text-3xl ${ibmPlexMono.className} leading-relaxed`}>
+                            {gameLost && <h1 className={`text-[#f7f7f7] text-center font-bold m-0 md:text-3xl text-xl ${ibmPlexMono.className} leading-relaxed`}>
                                 YOU LOST THE GAME</h1>}
-                            {!gameWon && !gameLost && <h1 className={`text-[#0a0a0a] text-center font-bold m-0 text-3xl ${ibmPlexMono.className} leading-relaxed`}>
+                            {!gameWon && !gameLost && <h1 className={`text-[#0a0a0a] text-center font-bold m-0 md:text-3xl text-xl ${ibmPlexMono.className} leading-relaxed`}>
                                 LET'S PLAY THE GAME</h1>}
                         </div>
                     </div>
@@ -151,13 +156,14 @@ export default function Hero() {
 
 
                 {/* Tablets group */}
-                <motion.div className="w-full h-auto overflow-clip flex justify-center flex-col items-center gap-10  p-5"
+                <motion.div className="w-full h-auto overflow-clip flex justify-center flex-col items-center md:gap-10  md:p-5 
+                    p-1 gap-5"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.5, ease: "easeInOut" }}>
                     <div className="w-full h-auto flex flex-col justify-center items-center">
-                        <div className="w-full h-fit flex flex-wrap md:max-w-[65vw] lg:max-w-[40vw] max-w-[90vw] gap-2 justify-center items-center
-                            align-middle m-0">
+                        <div className="w-full h-fit flex flex-wrap md:max-w-[65vw] lg:max-w-[40vw] max-w-[90vw] 
+                        gap-2 justify-center items-center align-middle m-0">
                             {allLanguages}
                         </div>
                     </div>
@@ -180,7 +186,7 @@ export default function Hero() {
                                     backgroundColor: restColor ? '#00a8e8' : '#fffafb',
                                     color: restColor ? '#f7f7f7' : '#0a0a0a',
                                 }}
-                                className={`px-10 py-2 text-lg font-semibold rounded-lg cursor-pointer 
+                                className={`px-10 py-2 md:text-lg text-md font-semibold rounded-lg cursor-pointer 
                                 bg-[#fffafb] border-[#ced4da] border shadow-md transition-colors duration-200 ease-in-out`}>
                                 Start New Game
                             </button>
