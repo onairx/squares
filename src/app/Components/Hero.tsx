@@ -3,6 +3,7 @@ import { wordsList } from "@/app/Components/Data";
 import { motion } from "framer-motion";
 import { languages } from "@/app/Components/Data"
 import { IBM_Plex_Mono } from "next/font/google";
+import Footer from "./Footer";
 
 const ibmPlexMono = IBM_Plex_Mono({
     variable: "--font-ibm-plex-mono",
@@ -195,6 +196,9 @@ export default function Hero() {
 
 
                 </motion.div>
+
+                <Footer />
+
             </div>
         </section>
     )
