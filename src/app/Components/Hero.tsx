@@ -123,7 +123,7 @@ export default function Hero() {
 
     return (
         <section className="w-full h-screen lg:p-5 overflow-clip">
-            <div className="w-full h-full bg-image">
+            <div className="w-full h-full bg-image flex flex-col justify-center items-center">
 
                 {/* Win or loose banner */}
                 <div className="w-full h-[10vh]">
@@ -193,12 +193,8 @@ export default function Hero() {
                             </button>
                         </div>
                     </div>
-
-
                 </motion.div>
-
                 <Footer />
-
             </div>
         </section>
     )
