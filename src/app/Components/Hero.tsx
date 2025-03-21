@@ -51,9 +51,9 @@ export default function Hero() {
         const normal = userClickedLetters.includes(letter) ? letter.toUpperCase() : ""
         return (
             <div key={index} className={`border-[#00a8e8] border-b-2 w-[3rem] h-[3rem] flex justify-center align-middle items-center
-                font-bold text-3xl rounded-sm bg-[#253237] shadow-md text-[#f7f7f7]`}>
-                {!gameLost && normal}
-                {gameLost && letter.toUpperCase()}
+                font-bold text-3xl rounded-sm bg-[#253237] shadow-md text-[#f7f7f7] 
+                ${gameLost && !userClickedLetters.includes(letter) && 'text-red-400'}`}>
+                {gameLost ? letter.toUpperCase() : normal}
             </div>
         )
     })
