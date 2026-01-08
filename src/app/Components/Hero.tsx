@@ -92,6 +92,8 @@ export default function Hero() {
     })
 
 
+
+
     // rendering alphabets
     const alphabets = "abcdefghijklmnopqrstuvwxyz";
     const alphabetArray = alphabets.split("");
@@ -100,6 +102,7 @@ export default function Hero() {
         const isCorrect = isClicked && wordArray.includes(letter);
         const isWrong = isClicked && !wordArray.includes(letter);
         const theClickLimit = restColor
+
 
         return (
             <button
